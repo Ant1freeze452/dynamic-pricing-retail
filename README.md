@@ -9,6 +9,7 @@
 Разработать программный прототип, который на основе исторических данных и цен конкурентов рекомендует оптимальную цену для максимизации выручки.
 
 ## Структура проекта
+```
 dynamic_pricing_retail/
 ├── data/ # Сгенерированные данные (не в Git)
 ├── data_generator.py # Генератор синтетических данных
@@ -16,27 +17,32 @@ dynamic_pricing_retail/
 ├── app.py # Веб-интерфейс (в разработке)
 ├── requirements.txt # Зависимости
 └── README.md # Документация
+```
 
 ## Быстрый старт
 
 ### 1. Клонировать репозиторий
 ```bash
 git clone https://github.com/Antifreeze452/dynamic-pricing-retail.git
-cd dynamic-pricing-retail```
+cd dynamic-pricing-retail
+```
 
 ### 2. Установить зависимости
 ```bash
 python -m venv venv
-source venv/Scripts/activate```
+source venv/Scripts/activate
+pip install -r requirements.txt
+```
 
 
 ### 3. Сгенерировать данные
 ```bash
-python data_generator.py```
+python data_generator.py
+```
 
 # О данных
 Генератор создаёт синтетическую историю продаж:
-100 дней истории
-5 товаров с разными характеристиками
-Эластичность спроса — зависимость продаж от цены
-Цены конкурентов — влияют на спрос
+- 100 дней истории
+- 5 товаров с разными характеристиками
+- Эластичность спроса — зависимость продаж от цены
+- Цены конкурентов — влияют на спрос
