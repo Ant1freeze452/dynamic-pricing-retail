@@ -57,7 +57,7 @@ def get_seasonality(date):
     annual = 1.0 + 0.1 * np.sin(2 * np.pi * (day_of_year - 180) / 365)
     return round(season * annual, 3)
 
-def generate_sales_data(n_days=90, start_date="2024-01-01"):
+def generate_sales_data(n_days=90, start_date="2026-01-01"):
     """Главная функция генерации датасета"""
     np.random.seed(42)
     random.seed(42)
