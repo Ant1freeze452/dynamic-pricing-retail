@@ -158,7 +158,7 @@ with tab2:
         color = "green" if val > 0 else ("red" if val < 0 else "black")
         return f"color: {color}"
 
-    styled = report.style.applymap(
+    styled = report.style.map(
         color_delta,
         subset=["Δ Выручка (руб)", "Δ Прибыль (руб)", "Δ Цена (%)"]
     )
