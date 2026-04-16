@@ -176,7 +176,10 @@ def generate_pricing_report(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         DataFrame с рекомендациями по каждому товару
     """
-    from data_generator import PRODUCTS
+    try:
+    	from src.data_generator import PRODUCTS
+    except ModuleNotFoundError:
+    	from data_generator import PRODUCTS
 
     rows = []
 
@@ -232,6 +235,13 @@ def generate_pricing_report(df: pd.DataFrame) -> pd.DataFrame:
 # ТОЧКА ВХОДА
 # ──────────────────────────────────────────────────
 if __name__ == "__main__":
+
+    import os
+    # Путь к data/ всегда относительно корня проекта (папки, где лежит src/)
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    _data_dir = os.path.join(_root, "data")
+    os.makedirs(_data_dir, exist_ok=True)
+
     df = pd.read_csv("data/sales_history.csv")
 
     print("Применяем rule-based правила...")
