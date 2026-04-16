@@ -176,7 +176,7 @@ def generate_pricing_report(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         DataFrame с рекомендациями по каждому товару
     """
-    from src.data_generator import PRODUCTS
+    from data_generator import PRODUCTS
 
     rows = []
 
